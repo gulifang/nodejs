@@ -6,9 +6,10 @@ var connection=mysql.createConnection({
     database:"test"
 });
 connection.connect();
+var Array=["name","age"];
 var username="zs";
-var sql="select * from student where name='"+username+"'";
-connection.query(sql,function(err,rows,fields){
+var sql="select ?? from student where name=?";
+connection.query(sql,[Array,username],function(err,rows,fields){
     if(err){
         console.log(err);
     }else{
